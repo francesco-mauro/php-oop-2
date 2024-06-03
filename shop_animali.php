@@ -153,21 +153,26 @@ class Cuccia extends Prodotto {
     }
 }
 
-// ----------------------------------Test della classe Prodotto---------------------------
 
 $categoriaCani = new Categoria("Cani", "🐶");
 $categoriaGatti = new Categoria("Gatti", "🐱");
+
 
 $ciboCani = new Cibo("Cibo per cani", 20.99, $categoriaCani);
 $giocoGatti = new Gioco("Gioco per gatti", 10.99, $categoriaGatti);
 $cucciaCani = new Cuccia("Cuccia per cani", 50.00, $categoriaCani);
 
+
 $prodotti = [$ciboCani, $giocoGatti, $cucciaCani];
 
+// Stampa delle card dei prodotti in maniera molto grossolana
 foreach ($prodotti as $prodotto) {
     $dettagli = $prodotto->getDettagli();
-    echo "Prodotto: " . $dettagli['Titolo'] . ", Prezzo: $" . $dettagli['Prezzo'] . ", Categoria: " . $dettagli['Categoria'] . " " . $dettagli['IconaCategoria'] . ", Tipo: " . $prodotto->getTipo() . "\n";
+    echo "<div class='card'>";
+    echo "<h2>" . $dettagli['Titolo'] . "</h2>";
+    echo "<p>Prezzo: $" . $dettagli['Prezzo'] . "</p>";
+    echo "<p>Categoria: " . $dettagli['Categoria'] . " " . $dettagli['IconaCategoria'] . "</p>";
+    echo "<p>Tipo: " . $prodotto->getTipo() . "</p>";
+    echo "</div>";
 }
-
-
 ?>
