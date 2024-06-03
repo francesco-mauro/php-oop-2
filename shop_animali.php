@@ -50,7 +50,7 @@ class Categoria {
     }
 }
 
-$categoriaCani = new Categoria("Cani", "IconaPlaceholder");
+$categoriaCani = new Categoria("Cani", "🐶");
 echo "Categoria: " . $categoriaCani->getNome() . " " . $categoriaCani->getIcona();
 
 
